@@ -2,7 +2,7 @@
 ## Resume
 
 Dalam materi ini mempelajari
-    1. Variabel dan Operator
+    1. Variabel dan Operator 
     2. Branching
     3. Looping
 
