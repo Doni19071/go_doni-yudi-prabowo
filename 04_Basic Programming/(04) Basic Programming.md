@@ -1,8 +1,8 @@
-# 03 Basic Programming
+# 04 Basic Programming
 ## Resume
 
-Dalam materi ini mempelajari
-    1. Variabel dan Operator
+Dalam materi ini mempelajari :
+    1. Variabel
     2. Branching
     3. Looping
 
