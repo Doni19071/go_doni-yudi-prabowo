@@ -36,5 +36,5 @@ func primeX(n int) int {
 	return i
 }
 func main() {
-	fmt.Println(primeX(2))
+	fmt.Println(primeX(10))
 }

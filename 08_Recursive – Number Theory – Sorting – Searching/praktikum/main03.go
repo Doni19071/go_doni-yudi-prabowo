@@ -25,24 +25,25 @@ func primaSegiEmpat(high, wide, start int) {
 		fmt.Println("Tidak ada")
 	}
 	count := 0
-	i := start
+	i := start + 1
 	n := high * wide
+	j := 1
+	hasil := 0
 	for ; ; i++ {
-		for j := 0; j < high; j++ {
-			for k := 0; k < wide; k++ {
-				if cekPrime(i) {
-					count++
-					fmt.Printf("%d ", i)
-				}
-
+		if cekPrime(i) {
+			count++
+			hasil += i
+			fmt.Printf("%d ", i)
+			if count == j*wide {
+				fmt.Println("")
+				j++
 			}
-			fmt.Printf("\n")
 		}
 		if count == n {
 			break
 		}
-
 	}
+	fmt.Printf("%d \n\n", hasil)
 }
 
 func main() {
