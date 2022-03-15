@@ -1,0 +1,118 @@
+mysql> use alta_online_shop
+Database changed
+mysql> show tables;
++----------------------------+
+| Tables_in_alta_online_shop |
++----------------------------+
+| detail_transaksi           |
+| operators                  |
+| payment_method             |
+| product                    |
+| product_deskripsi          |
+| product_type               |
+| transaksi                  |
+| user                       |
++----------------------------+
+8 rows in set (0.00 sec)
+
+mysql> show columns from detail_transaksi;
++--------------+---------------+------+-----+---------+-------+
+| Field        | Type          | Null | Key | Default | Extra |
++--------------+---------------+------+-----+---------+-------+
+| transaksi_id | int           | YES  |     | NULL    |       |
+| product_id   | int           | YES  |     | NULL    |       |
+| status       | varchar(10)   | YES  |     | NULL    |       |
+| qty          | int           | YES  |     | NULL    |       |
+| price        | decimal(20,2) | YES  |     | NULL    |       |
+| updated_at   | timestamp     | YES  |     | NULL    |       |
+| created_at   | timestamp     | YES  |     | NULL    |       |
++--------------+---------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> show columns from operators;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| id         | int          | NO   | PRI | NULL    |       |
+| nama       | varchar(225) | YES  |     | NULL    |       |
+| updated_at | timestamp    | YES  |     | NULL    |       |
+| created_at | timestamp    | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> show columns from payment_method;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| id         | int          | NO   | PRI | NULL    |       |
+| nama       | varchar(225) | YES  |     | NULL    |       |
+| status     | smallint     | YES  |     | NULL    |       |
+| updated_at | timestamp    | YES  |     | NULL    |       |
+| created_at | timestamp    | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> show columns from product;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| id              | int          | NO   | PRI | NULL    |       |
+| product_type_id | int          | YES  |     | NULL    |       |
+| operator_id     | int          | YES  |     | NULL    |       |
+| nama            | varchar(225) | YES  |     | NULL    |       |
+| status          | smallint     | YES  |     | NULL    |       |
+| updated_at      | timestamp    | YES  |     | NULL    |       |
+| created_at      | timestamp    | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> show columns from product_deskripsi;
++------------+-----------+------+-----+---------+-------+
+| Field      | Type      | Null | Key | Default | Extra |
++------------+-----------+------+-----+---------+-------+
+| deskripsi  | text      | YES  |     | NULL    |       |
+| id         | int       | NO   | PRI | NULL    |       |
+| updated_at | timestamp | YES  |     | NULL    |       |
+| created_at | timestamp | YES  |     | NULL    |       |
++------------+-----------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> show columns from product_type;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| id         | int          | NO   | PRI | NULL    |       |
+| nama       | varchar(225) | YES  |     | NULL    |       |
+| updated_at | timestamp    | YES  |     | NULL    |       |
+| created_at | timestamp    | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> show columns from transaksi;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| id          | int           | NO   | PRI | NULL    |       |
+| user_id     | int           | YES  |     | NULL    |       |
+| status      | varchar(10)   | YES  |     | NULL    |       |
+| total_qty   | int           | YES  |     | NULL    |       |
+| total_price | decimal(21,2) | YES  |     | NULL    |       |
+| updated_at  | timestamp     | YES  |     | NULL    |       |
+| created_at  | timestamp     | YES  |     | NULL    |       |
++-------------+---------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> show columns from user;
++---------------+-------------------------------+------+-----+---------+-------+
+| Field         | Type                          | Null | Key | Default | Extra |
++---------------+-------------------------------+------+-----+---------+-------+
+| id            | int                           | NO   | PRI | NULL    |       |
+| nama          | varchar(25)                   | YES  |     | NULL    |       |
+| alamat        | text                          | YES  |     | NULL    |       |
+| tanggal_lahir | date                          | YES  |     | NULL    |       |
+| status        | varchar(15)                   | YES  |     | NULL    |       |
+| gender        | enum('laki-laki','perempuan') | YES  |     | NULL    |       |
+| created_at    | datetime                      | YES  |     | NULL    |       |
+| pdated_at     | date                          | YES  |     | NULL    |       |
++---------------+-------------------------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
